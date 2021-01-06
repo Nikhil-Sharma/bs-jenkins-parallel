@@ -1,6 +1,6 @@
 exports.config = {
-  user: 'BROWSERSTACK_USERNAME',
-  key: 'BROWSERSTACK_ACCESS_KEY',
+  user: 'nikhilsharma31',
+  key: 'rTMqV2dudahjfBzSZ8xT',
   server: 'hub-cloud.browserstack.com',
 
   capabilities: [
@@ -18,3 +18,9 @@ exports.config = {
     }
   ]
 }
+
+async function example() {
+  await driver.get("http://google.com");
+  await driver.findElement(By.name("q")).sendKeys("Jenkins",Key.RETURN);
+}
+example();
