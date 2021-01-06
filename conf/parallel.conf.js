@@ -27,9 +27,3 @@ exports.config = {
 exports.config.capabilities.forEach(function(caps){
     Object.assign(caps, exports.config.commonCapabilities);
 });
-
-async function example() {
-  await driver.get("http://google.com");
-  await driver.findElement(By.name("q")).sendKeys("Jenkins",Key.RETURN);
-}
-example();
