@@ -2,14 +2,10 @@ exports.config = {
   user: 'nikhilsharma31',
   key: 'rTMqV2dudahjfBzSZ8xT',
   server: 'hub-cloud.browserstack.com',
+
   commonCapabilities: {
-    'browserstack.use_w3c': true,
-    'bstack:options': {
-      'sessionName': 'parallel_test',
-      'buildName': 'cucumber-js-browserstack',
-      'projectName': 'Test App',
-      'debug': true,
-    },
+    name: 'Bstack-[CucumberJS] Parallel Test',
+    "browserstack.debug": true
   },
 
   capabilities: [{
@@ -17,13 +13,13 @@ exports.config = {
   },{
     browserName: 'firefox'
   },{
-    browserName: 'internet explorer'
-  },{
     browserName: 'safari'
-  }],
+  },{
+    browserName: 'internet explorer'
+  }]
 }
 
 // Code to support common capabilities
 exports.config.capabilities.forEach(function(caps){
-    Object.assign(caps, exports.config.commonCapabilities);
+  for(var i in exports.config.commonCapabilities) caps[i] = caps[i] || exports.config.commonCapabilities[i];
 });
